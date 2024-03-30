@@ -1,9 +1,8 @@
+from flask import Flask, request, jsonify, session, redirect, url_for
 from itertools import combinations, permutations
 from pyswip import Prolog
-from flask import Flask, request, jsonify, session, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
-import os
-import sys
+
 
 app = Flask(__name__)
 
@@ -59,49 +58,11 @@ def expert_status():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Define the list of symptoms
 
 f = open("symptoms.txt", "r")
-# print(f.read())
 
 symptoms = list(f.read().split("\n"))
-
-# symptoms = [
-#     "blank_screen",
-#     "artifacting_on_screen",
-#     "flickering_display",
-#     "no_sound",
-#     "computer_freezing",
-#     "random_shutdowns",
-#     "loud_fan_noise",
-#     "computer_overheating",
-#     "spontaneous_rebooting",
-#     "slow_performance",
-#     "high_CPU_usage",
-#     "computer_not_booting_to_OS",
-#     "blue_screen_of_death",
-#     "usb_device_not_recognized",
-#     "network_connection_issues",
-#     "unresponsive_keyboard",
-#     "loud_hard_drive_noise",
-#     "computer_wont_power_on",
-#     "printer_not_printing",
-# ]
 
 # Initialize Prolog
 prolog = Prolog()
@@ -169,36 +130,6 @@ def add_symptom():
         return jsonify({'message': 'Symptom added successfully'})
     else:
         return jsonify({'error': 'Invalid data'})
-
-# def add_or_create_fault(symptom, fault_predicate):
-#     filename = "diagnosis.pl"
-#     with open(filename, "r") as file:
-#         print("m here")
-#         lines = file.readlines()
-
-#     # Check if the fault_predicate already exists in the file
-#     predicate_exists = any(fault_predicate in line for line in lines)
-    
-#     with open(filename, "w") as file:
-#         for line in lines:
-#             if fault_predicate in line and not predicate_exists:
-#                 # Add symptom to the existing fault predicate
-#                 line = line.rstrip()[:-3] + ", " + symptom + "]).\n"
-#             file.write(line)
-#             print(line)
-        
-#         # If the fault predicate does not exist, create a new one
-#         if not predicate_exists:
-#             for line in lines:
-#                 if "Define symptoms associated with each issue" in line:
-#                     line = line + f"\n{fault_predicate}([{symptom}])\n"
-#                 if "Define dynamic predicates for symptoms" in line:
-#                     line = line + "\n:- dynamic {}/1.\n".format(fault_predicate)
-#                 fault_predicateW = fault_predicate[:-9]
-#                 if "Rules for diagnosing issues based on symptoms" in line:
-#                     line = line + f"""\ndiagnose_issue(Symptoms, {fault_predicateW}) :-
-#     {fault_predicate}(Symptoms).\n\n""".format(fault_predicate)
-#             file.write(line)
 
 def add_or_create_fault(symptoms, fault_predicate):
     done = False

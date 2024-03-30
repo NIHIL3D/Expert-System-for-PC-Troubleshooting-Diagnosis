@@ -1,4 +1,3 @@
-// ClientPage.js
 import React, { useState, useEffect } from 'react';
 
 function ClientPage() {
@@ -71,7 +70,7 @@ return (
     </ul>
     <button onClick={diagnoseIssues} className="btn">Diagnose Issues</button>
     {diagnoseMessage && <p>{diagnoseMessage}</p>}
-    {diagnosedIssues.length > 0 &&  // Condition pour afficher si des diagnostics sont disponibles
+    {diagnosedIssues.length > 0 && 
     <div>
         <h2>Diagnosed Issues</h2>
         <ul>

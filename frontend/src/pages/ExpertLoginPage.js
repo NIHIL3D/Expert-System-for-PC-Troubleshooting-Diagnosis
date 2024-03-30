@@ -1,4 +1,3 @@
-// ExpertLoginPage.js
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -19,7 +18,6 @@ function ExpertLoginPage() {
         body: JSON.stringify({ email, password })
       });
       if (response.ok) {
-        console.log('Expert login successful');
         history.push('/expert/add-problem');
       } else {
         const data = await response.json();
