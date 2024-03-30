@@ -22,9 +22,7 @@ def expert_login():
     data = request.json
     email = data.get('email')
     password = data.get('password')
-    print('Hello world!', file=sys.stderr)
     expert = next((expert for expert in experts if expert['email'] == email), None)
-    print("password")
     if expert and check_password_hash(expert['password'], password):
         # Stocker les informations de l'expert dans la session
         session['expert'] = email
@@ -112,7 +110,6 @@ def get_symptoms():
 def diagnose():
     data = request.json
     symptoms = data.get('symptoms', [])
-    print(symptoms)
     faulty_issues = find_faulty_issues(symptoms)
     return jsonify({'faulty_issues': faulty_issues})
 
@@ -124,8 +121,6 @@ def add_symptom():
     symptom = data.get('symptom', '')
     if issue and symptom:
         # Add symptom to the corresponding issue
-        print("issue: ", issue)
-        print("symptom: ", symptom)
         add_or_create_fault(symptom, issue)
         return jsonify({'message': 'Symptom added successfully'})
     else:
