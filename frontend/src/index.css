@@ -1,0 +1,173 @@
+/* index.css */
+
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1faee;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.Title{
+  text-align: center;
+}
+
+/* Styles spécifiques pour chaque page */
+/* Home.js */
+.home-container {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Styles pour les boutons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #457b9d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #1d3557;
+}
+
+/* ExpertLoginPage.js */
+.login-container {
+  /* max-width: 400px;
+  margin: 0 auto; */
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-container div {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #457b9d;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #1d3557;
+}
+
+/* ExpertAddProblemPage.js */
+.add-problem-container {
+  /* max-width: 600px;
+  margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.add-problem-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-problem-container p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-problem-container input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.add-problem-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6a994e;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.add-problem-container button:hover {
+  background-color: #386641;
+}
+
+/* ClientPage.js */
+.client-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.client-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.client-container h2 {
+  margin-bottom: 10px;
+}
+
+.client-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.client-container li {
+  margin-bottom: 5px;
+}
+
+.client-container button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #e63946;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.client-container button:hover {
+  background-color: #c82333;
+}
