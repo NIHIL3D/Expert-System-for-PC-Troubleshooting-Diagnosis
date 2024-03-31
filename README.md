@@ -49,6 +49,11 @@ The Expert System for PC Troubleshooting Diagnosis aims to provide users with a 
   npm start
   ```
 - Open your browser and go to http://localhost:3000 to access the application.
+6. Expert creds:
+  ```
+    {email: 'expert1@example.com', password: 'password1'},
+    {email: 'expert2@example.com', password: 'password2'}
+  ```
 ## Usage
 - Client Side:
   - Visit the homepage and choose your role as a client.
